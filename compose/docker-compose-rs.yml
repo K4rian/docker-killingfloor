@@ -1,0 +1,48 @@
+services:
+  kfserver:
+    image: k4rian/killingfloor:latest
+    container_name: kfserver
+    hostname: kfserver
+    volumes:
+      - data:/home/steam
+      - /etc/localtime:/etc/localtime:ro
+    env_file:
+      - kfserver.env
+    secrets:
+      - steamacc_username
+      - steamacc_password
+    ports:
+      - 7707:7707/udp
+      - 7708:7708/udp
+      - 28852:28852/udp
+      - 28852:28852/tcp
+      - 8075:8075/tcp
+      - 20560:20560/tcp
+      - 20560:20560/udp
+    restart: unless-stopped
+  
+  kfrs:
+    image: k4rian/kfrs:latest
+    container_name: kfredirect
+    hostname: kfredirect
+    volumes:
+      - files:/home/kfrs/redirect
+      - /etc/localtime:/etc/localtime:ro
+    env_file:
+      - kfrs.env
+    ports:
+      - 9090:9090/tcp
+    restart: unless-stopped
+    depends_on:
+      kfserver:
+        condition: service_started
+
+volumes:
+  data:
+  files:
+
+secrets:
+  steamacc_username:
+    file: ./secret_steamacc_username.txt
+  steamacc_password:
+    file: ./secret_steamacc_password.txt

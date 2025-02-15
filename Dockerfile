@@ -6,7 +6,7 @@ RUN apt update \
     && apt install -y \
         git \
     && mkdir -p /server \
-    && git clone "https://github.com/K4rian/kfdsl.git" /tmp/launcher \
+    && git clone --depth 1 "https://github.com/K4rian/kfdsl.git" /tmp/launcher \
     && go mod download \
     && CGO_ENABLED=0 go build -a -o kfdsl . \
     && cp /tmp/launcher/kfdsl /server/kfdsl \
