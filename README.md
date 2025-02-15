@@ -73,7 +73,7 @@ KF_AUTORESTART         | `false`                         | Automatically restart
 KF_MUTLOADER           | `false`                         | Enable MutLoader (inline mutator). 
 KF_KFPATCHER           | `false`                         | Enable KFPatcher (server mutator). 
 KF_HIDEPERKS           | `false`                         | KFPatcher: Hide perks. 
-KF_NOZEDTIME           | `false`                         | KFPatcher: Disable slow-motion during ZED Time. 
+KF_NOZEDTIME           | `false`                         | KFPatcher: Disable ZED Time (slow-motion). 
 KF_BUYEVERYWHERE       | `false`                         | KFPatcher: Allow buying weapons anywhere. 
 KF_ALLTRADERS          | `false`                         | KFPatcher: Keep all traders open. 
 KF_ALLTRADERS_MESSAGE  | `"^wAll traders are ^ropen^w!"` | KFPatcher: Message displayed when all traders are open. 
@@ -184,6 +184,8 @@ docker run -d \
   -e KF_MAP="TOY-DevilsDollhouse" \
   -e KF_DIFFICULTY="hell" \
   -e KF_LENGTH="short" \
+  -e KF_ADMINPASSWORD="<16_CHARACTERS_MAX_PASSWORD>" \
+  -e KF_WEBADMIN="true" \
   -e KF_MAPVOTE="true" \
   -v $(pwd)/steam_password.txt:/run/secrets/steamacc_password \
   -i k4rian/killingfloor
@@ -211,8 +213,8 @@ docker build --no-cache -t k4rian/killingfloor .
 
 ## See also
 - **[docker-steamcmd][5]**: The base image used by this project.
-- **[kfdsl][1]**: A custom launcher for the KF server, written in Go.
-- **[kfrs][6]**: A secure HTTP redirect server for the KF server, written in Go.
+- **[kfdsl][1]**: A custom launcher for the KF Dedicated Server, written in Go.
+- **[kfrs][6]**: A secure HTTP redirect server for the KF Dedicated Server, written in Go.
 
 ## License
 [MIT][7]
