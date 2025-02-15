@@ -1,9 +1,9 @@
-FROM golang:bookworm AS builder
+FROM golang:alpine3.20 AS builder
 
 WORKDIR /tmp/launcher
 
-RUN apt update \
-    && apt install -y \
+RUN apk update \
+    && apk -U add --no-cache \
         git \
     && mkdir -p /server \
     && git clone --depth 1 "https://github.com/K4rian/kfdsl.git" /tmp/launcher \
