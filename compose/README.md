@@ -50,9 +50,9 @@ secrets:
 ```
 * The environment file *[kfserver.env](kfserver.env)* holds the Dedicated Server environment variables.
 
-* The Steam account username is defined in the *[secret_steamacc_username.txt](secret_steamacc_username.txt)*. The secret name must be `steamacc_username`.
+* The Steam account username is defined in the *[secret_steamacc_username.txt](secret_steamacc_username.txt)* file. The secret name must be `steamacc_username`.
 
-* The Steam account password is defined in the *[secret_steamacc_password.txt](secret_steamacc_password.txt)*. The secret name must be `steamacc_password`.
+* The Steam account password is defined in the *[secret_steamacc_password.txt](secret_steamacc_password.txt)* file. The secret name must be `steamacc_password`.
 
 ## [Compose file](docker-compose-rs.yml) with [KFRS][1] (Redirect Server)
 ```yaml
