@@ -1,5 +1,5 @@
 <p align="center">
- <img alt="docker-killingfloor logo" src="https://raw.githubusercontent.com/K4rian/docker-killingfloor/assets/icons/logo-docker-killingfloor.svg" width="25%" align="center">
+ <img alt="docker-killingfloor logo" src="https://raw.githubusercontent.com/K4rian/docker-killingfloor/refs/heads/assets/icons/logo-docker-killingfloor.svg" width="25%" align="center">
 </p>
 
 A Docker image for the __Killing Floor Dedicated Server__, packaged with the custom launcher **[KFDSL][1]** and based on [Debian][2] (bookworm-slim).<br>
